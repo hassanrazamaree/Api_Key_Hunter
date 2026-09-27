@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>APIKeyHunter.WPF</RootNamespace>
+    <ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
+    <StartupObject>APIKeyHunter.WPF.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APIKeyHunter.Core\APIKeyHunter.Core.csproj" />
+    <ProjectReference Include="..\APIKeyHunter.Data\APIKeyHunter.Data.csproj" />
+    <ProjectReference Include="..\APIKeyHunter.Providers\APIKeyHunter.Providers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\**\*" />
+  </ItemGroup>
+</Project>

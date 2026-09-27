@@ -1,0 +1,105 @@
+<UserControl x:Class="APIKeyHunter.WPF.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="32,28,32,28">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="24" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="24" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Page header -->
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Dashboard"
+                           Style="{StaticResource TitleText}" />
+                <TextBlock Text="Overview of scan activity and discovered keys."
+                           Style="{StaticResource BodyText}"
+                           Margin="0,4,0,0" />
+            </StackPanel>
+
+            <!-- Error message -->
+            <Border Grid.Row="2"
+                    Style="{StaticResource AccentCard}"
+                    BorderBrush="{StaticResource DangerBrush}"
+                    Background="{StaticResource DangerSubtleBrush}"
+                    Visibility="{Binding ErrorMessage, Converter={StaticResource NullOrEmptyToVisibility}}">
+                <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="{StaticResource DangerBrush}"
+                           Style="{StaticResource BodyText}" />
+            </Border>
+
+            <!-- Stat cards row -->
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Discovered -->
+                <Border Grid.Column="0" Style="{StaticResource SurfaceCard}">
+                    <StackPanel>
+                        <TextBlock Text="Total Discovered"
+                                   Style="{StaticResource SubheadingText}" />
+                        <TextBlock Text="{Binding TotalDiscovered}"
+                                   FontFamily="{StaticResource FontMono}"
+                                   FontSize="{StaticResource FontSize2xl}"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource TextPrimaryBrush}"
+                                   Margin="0,8,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Valid -->
+                <Border Grid.Column="2" Style="{StaticResource SurfaceCard}">
+                    <StackPanel>
+                        <TextBlock Text="Valid Keys"
+                                   Style="{StaticResource SubheadingText}" />
+                        <TextBlock Text="{Binding TotalValid}"
+                                   FontFamily="{StaticResource FontMono}"
+                                   FontSize="{StaticResource FontSize2xl}"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource SuccessBrush}"
+                                   Margin="0,8,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Invalid -->
+                <Border Grid.Column="4" Style="{StaticResource SurfaceCard}">
+                    <StackPanel>
+                        <TextBlock Text="Invalid Keys"
+                                   Style="{StaticResource SubheadingText}" />
+                        <TextBlock Text="{Binding TotalInvalid}"
+                                   FontFamily="{StaticResource FontMono}"
+                                   FontSize="{StaticResource FontSize2xl}"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource DangerBrush}"
+                                   Margin="0,8,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Status -->
+                <Border Grid.Column="6" Style="{StaticResource SurfaceCard}">
+                    <StackPanel>
+                        <TextBlock Text="Scanner Status"
+                                   Style="{StaticResource SubheadingText}" />
+                        <TextBlock Text="Idle"
+                                   FontFamily="{StaticResource FontMono}"
+                                   FontSize="{StaticResource FontSize2xl}"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource AccentBrush}"
+                                   Margin="0,8,0,0" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

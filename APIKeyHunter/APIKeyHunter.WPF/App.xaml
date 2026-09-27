@@ -1,0 +1,32 @@
+<Application x:Class="APIKeyHunter.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:APIKeyHunter.WPF.Converters">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Theme tokens -->
+                <ResourceDictionary Source="/Resources/Themes/DarkTheme.xaml" />
+
+                <!-- Component styles -->
+                <ResourceDictionary Source="/Resources/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/CardStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/DataGridStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/NavigationStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Converters -->
+            <converters:BoolToVisibilityConverter     x:Key="BoolToVisibility" />
+            <converters:BoolNegateConverter            x:Key="BoolNegate" />
+            <converters:NullOrEmptyToVisibilityConverter x:Key="NullOrEmptyToVisibility" />
+            <converters:PercentageConverter            x:Key="Percentage" />
+            <converters:KeyStatusToBrushConverter      x:Key="KeyStatusToBrush" />
+            <converters:TokenStatusToBrushConverter    x:Key="TokenStatusToBrush" />
+            <converters:DateTimeConverter              x:Key="DateTimeFormat" />
+            <converters:ValidationStatusConverter      x:Key="ValidationStatusFormat" />
+            <converters:QueueCountConverter            x:Key="QueueCount" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

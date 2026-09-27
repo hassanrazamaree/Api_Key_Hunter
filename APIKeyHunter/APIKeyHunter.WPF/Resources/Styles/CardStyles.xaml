@@ -1,0 +1,57 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Standard surface card -->
+    <Style x:Key="SurfaceCard" TargetType="Border">
+        <Setter Property="Background"       Value="{StaticResource SurfaceCardBrush}" />
+        <Setter Property="BorderBrush"      Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="CornerRadius"     Value="{StaticResource RadiusLg}" />
+        <Setter Property="Padding"          Value="{StaticResource CardPadding}" />
+    </Style>
+
+    <!-- Elevated variant -->
+    <Style x:Key="ElevatedCard" TargetType="Border">
+        <Setter Property="Background"       Value="{StaticResource SurfaceElevatedBrush}" />
+        <Setter Property="BorderBrush"      Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="CornerRadius"     Value="{StaticResource RadiusLg}" />
+        <Setter Property="Padding"          Value="{StaticResource CardPadding}" />
+    </Style>
+
+    <!-- Compact stat tile -->
+    <Style x:Key="StatCard" TargetType="Border">
+        <Setter Property="Background"       Value="{StaticResource SurfaceCardBrush}" />
+        <Setter Property="BorderBrush"      Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="CornerRadius"     Value="{StaticResource RadiusMd}" />
+        <Setter Property="Padding"          Value="14,12,14,12" />
+    </Style>
+
+    <!-- Accent-highlighted card -->
+    <Style x:Key="AccentCard" TargetType="Border">
+        <Setter Property="Background"       Value="{StaticResource AccentSubtleBrush}" />
+        <Setter Property="BorderBrush"      Value="{StaticResource AccentBrush}" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="CornerRadius"     Value="{StaticResource RadiusMd}" />
+        <Setter Property="Padding"          Value="12,10,12,10" />
+    </Style>
+
+    <!-- Section separator line -->
+    <Style x:Key="Separator" TargetType="Border">
+        <Setter Property="Height"       Value="1" />
+        <Setter Property="Background"   Value="{StaticResource BorderBrush}" />
+        <Setter Property="Margin"       Value="0,12,0,12" />
+    </Style>
+
+    <!-- Scrollable log panel -->
+    <Style x:Key="LogPanel" TargetType="Border">
+        <Setter Property="Background"      Value="#090D12" />
+        <Setter Property="BorderBrush"     Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius"    Value="{StaticResource RadiusMd}" />
+        <Setter Property="Padding"         Value="12" />
+    </Style>
+
+</ResourceDictionary>
